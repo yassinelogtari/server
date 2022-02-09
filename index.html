@@ -32,7 +32,7 @@
 
             function FB.checkLoginState() {
                 FB.getLoginStatus(function (response) {
-                    FB.statusChangeCallback(response);
+                    statusChangeCallback(response);
                 });
             }
 
