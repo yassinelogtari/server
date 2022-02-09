@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
     <h1>Hello!!!</h1>
 
     <fb:login-button scope="public_profile" onlogin="checkLoginState();">
     </fb:login-button>
-    
+
     <div id="status"></div>
 
+    
+          
+            
+    
 
+          
+    
+    
+  
     <script>
-
-    function checkLoginState() {
-      FB.getLoginStatus(function(response) {
    function statusChangeCallback(response) {
                 console.log('statusChangeCallback');
                 console.log(response);
@@ -42,20 +45,13 @@
                       'into this app.';
                 }
             }
-      });
-    }
-
-    // Load the SDK asynchronously
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-
-
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
       window.fbAsyncInit = function () {
           FB.init({
               appId: '624650525458224',
@@ -63,11 +59,8 @@
               xfbml: true,
               version: 'v13.0'
           });
-
           FB.AppEvents.logPageView();
-
       }; 
     </script>
 </body>
-
 </html>
