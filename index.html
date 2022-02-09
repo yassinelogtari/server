@@ -24,6 +24,10 @@
                 version: 'v13.0'
             });
             console.log(FB.init);
+            
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
 
             FB.AppEvents.logPageView();
 
