@@ -11,6 +11,9 @@
 <body>
     <h1>Hello!!</h1>
 
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+
 
     <script>
         window.fbAsyncInit = function () {
@@ -22,10 +25,16 @@
             });
 
             FB.AppEvents.logPageView();
-            
+
             FB.getLoginStatus(function (response) {
                 statusChangeCallback(response);
             });
+
+            function checkLoginState() {
+                FB.getLoginStatus(function (response) {
+                    statusChangeCallback(response);
+                });
+            }
 
         };
 
