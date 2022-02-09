@@ -18,7 +18,7 @@
 
 
     <script>
-   function statusChangeCallback(response) {
+/*   function statusChangeCallback(response) {
                 console.log('statusChangeCallback');
                 console.log(response);
                 // The response object is returned with a status field that lets the
@@ -38,7 +38,12 @@
                     document.getElementById('status').innerHTML = 'Please log ' +
                       'into this app.';
                 }
-            }
+            }*/
+        function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
 
       (function(d, s, id){
          var js, fjs = d.getElementsByTagName(s)[0];
